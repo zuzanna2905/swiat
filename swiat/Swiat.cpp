@@ -24,7 +24,7 @@ Swiat::Swiat(){
 	this->ogranizm[0][0]->y = 6;
 
 	// przy ruchu zmienia siê index w tablicy ogranizm
-	//bonczek
+
 
 
 }
