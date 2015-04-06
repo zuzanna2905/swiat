@@ -31,8 +31,8 @@ void wybierz(int m, int x, int y, Organizm *tab[20][20]){
 	{
 	case 1:
 		tab[x][y] = new Antylopa;
-		tab[x][y]->x = x + X;
-		tab[x][y]->y = y + Y;
+		//tab[x][y]->x = x + X;
+		//tab[x][y]->y = y + Y;
 		tab[x][y]->rysowanie();
 		break;
 	case 2:

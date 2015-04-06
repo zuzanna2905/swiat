@@ -4,8 +4,8 @@
 using namespace std;
 
 class Czlowiek : public Zwierze {
-	int si³a;
-	int inicjatywa;
+	//int si³a;
+	//int inicjatywa;
 	//int x;
 	//int y;
 	// Swiat & ziemia;
@@ -15,6 +15,5 @@ public:
 	void akcja();
 	void kolizja();
 	void rysowanie();
-	int x;
-	int y;
+
 };
