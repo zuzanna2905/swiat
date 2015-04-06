@@ -17,6 +17,9 @@ void Antylopa::kolizja(){
 }
 
 void Antylopa::rysowanie(){
-	gotoxy(7,6);
+	int x = wherex();
+	int y = wherey();
+	gotoxy(this->x, this->y);
 	cputs("A");
+	gotoxy(x, y);
 }

@@ -22,9 +22,9 @@ Swiat::Swiat(){
 	organizm[0][0]->set_x(6);
 	organizm[0][0]->set_y(2);
 	// przy ruchu zmienia siê index w tablicy ogranizm
-	//for (int i = 0; i < 40; i++){
-	//	polozenie(organizm);
-	//}
+	for (int i = 0; i < 20; i++){
+		polozenie(organizm);
+	}
 }
 
 Swiat::~Swiat(){}
