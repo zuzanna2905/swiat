@@ -81,6 +81,7 @@
     <ClCompile Include="Antylopa.cpp" />
     <ClCompile Include="Conio2.cpp" />
     <ClCompile Include="Czlowiek.cpp" />
+    <ClCompile Include="Funkcje.cpp" />
     <ClCompile Include="Guarana.cpp" />
     <ClCompile Include="Lis.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="Antylopa.h" />
     <ClInclude Include="Conio2.h" />
     <ClInclude Include="Czlowiek.h" />
+    <ClInclude Include="Funkcje.h" />
     <ClInclude Include="Guarana.h" />
     <ClInclude Include="Lis.h" />
     <ClInclude Include="Mlecz.h" />

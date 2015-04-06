@@ -11,3 +11,8 @@ Lis::Lis(){
 void Lis::akcja(){}
 
 void Lis::kolizja(){}
+
+void Lis::rysowanie(){
+	gotoxy(9, 10);
+	cputs("L");
+}

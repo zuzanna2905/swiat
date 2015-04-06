@@ -13,3 +13,12 @@ Trawa::Trawa()
 Trawa::~Trawa()
 {
 }
+
+void Trawa::rysowanie(){
+	gotoxy(15, 6);
+	cputs("T");
+}
+
+void Trawa::akcja(){}
+
+void Trawa::kolizja(){}

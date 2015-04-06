@@ -16,6 +16,6 @@ void Czlowiek::akcja(){}
 void Czlowiek::kolizja(){}
 
 void Czlowiek::rysowanie(){
-	gotoxy(this->x, this->y);
+	gotoxy(12, 24);
 	cputs("X");
 }

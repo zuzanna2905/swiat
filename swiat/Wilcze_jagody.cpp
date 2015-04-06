@@ -13,3 +13,12 @@ Wilcze_jagody::Wilcze_jagody()
 Wilcze_jagody::~Wilcze_jagody()
 {
 }
+
+void Wilcze_jagody::rysowanie(){
+	gotoxy(9, 16);
+	cputs("J");
+}
+
+void Wilcze_jagody::akcja(){}
+
+void Wilcze_jagody::kolizja(){}

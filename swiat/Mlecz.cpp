@@ -12,3 +12,12 @@ Mlecz::Mlecz()
 Mlecz::~Mlecz()
 {
 }
+
+void Mlecz::rysowanie(){
+	gotoxy(9, 13);
+	cputs("G");
+}
+
+void Mlecz::akcja(){}
+
+void Mlecz::kolizja(){}

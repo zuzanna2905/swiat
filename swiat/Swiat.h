@@ -5,7 +5,7 @@
 using namespace std;
 
 class Swiat {
-	Organizm *ogranizm[N][N];
+	Organizm *organizm[N][N];
 	void rysujPlansze();
 
 public:

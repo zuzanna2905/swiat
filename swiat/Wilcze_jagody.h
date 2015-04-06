@@ -1,5 +1,6 @@
 #pragma once
 #include "Roslina.h"
+#include "Conio2.h"
 class Wilcze_jagody :
 	public Roslina
 {
@@ -8,5 +9,8 @@ class Wilcze_jagody :
 public:
 	Wilcze_jagody();
 	~Wilcze_jagody();
+	void rysowanie();
+	void akcja();
+	void kolizja();
 };
 

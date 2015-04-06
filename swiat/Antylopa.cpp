@@ -8,6 +8,15 @@ Antylopa::Antylopa()
 	inicjatywa = 4;
 }
 
+Antylopa::~Antylopa(){}
+
 void Antylopa::akcja(){}
 
-void Antylopa::kolizja(){}
+void Antylopa::kolizja(){
+	cout << "gowno" << endl;
+}
+
+void Antylopa::rysowanie(){
+	gotoxy(7,6);
+	cputs("A");
+}

@@ -11,3 +11,8 @@ Zolw::Zolw(){
 void Zolw::akcja(){}
 
 void Zolw::kolizja(){}
+
+void Zolw::rysowanie(){
+	gotoxy(20, 15);
+	cputs("Z");
+}

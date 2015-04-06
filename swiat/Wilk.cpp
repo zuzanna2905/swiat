@@ -11,3 +11,8 @@ Wilk::Wilk(){
 void Wilk::akcja(){}
 
 void Wilk::kolizja(){}
+
+void Wilk::rysowanie(){
+	gotoxy(19, 6);
+	cputs("W");
+}

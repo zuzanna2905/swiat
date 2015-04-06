@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Zwierze.h"
+#include "Conio2.h"
 using namespace std;
 
 class Wilk : public Zwierze {
@@ -14,4 +15,5 @@ public:
 	~Wilk();
 	void akcja();
 	void kolizja();
+	void rysowanie();
 };

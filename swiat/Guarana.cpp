@@ -12,3 +12,12 @@ Guarana::Guarana()
 Guarana::~Guarana()
 {
 }
+
+void Guarana::rysowanie(){
+	gotoxy(9, 6);
+	cputs("G");
+}
+
+void Guarana::akcja(){}
+
+void Guarana::kolizja(){}
