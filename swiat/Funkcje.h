@@ -1,7 +1,6 @@
 #pragma once 
 #include <iostream>
 #include "Organizm.h"
-#include "Organizm.h"
 #include "Zwierze.h"
 #include "Antylopa.h"
 #include "Guarana.h"

@@ -15,8 +15,11 @@ Wilcze_jagody::~Wilcze_jagody()
 }
 
 void Wilcze_jagody::rysowanie(){
-	gotoxy(9, 16);
+	int x = wherex();
+	int y = wherey();
+	gotoxy(this->x, this->y);
 	cputs("J");
+	gotoxy(x, y);
 }
 
 void Wilcze_jagody::akcja(){}

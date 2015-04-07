@@ -13,6 +13,9 @@ void Zolw::akcja(){}
 void Zolw::kolizja(){}
 
 void Zolw::rysowanie(){
-	gotoxy(20, 15);
+	int x = wherex();
+	int y = wherey();
+	gotoxy(this->x, this->y);
 	cputs("Z");
+	gotoxy(x, y);
 }

@@ -14,8 +14,11 @@ Mlecz::~Mlecz()
 }
 
 void Mlecz::rysowanie(){
-	gotoxy(9, 13);
-	cputs("G");
+	int x = wherex();
+	int y = wherey();
+	gotoxy(this->x, this->y);
+	cputs("M");
+	gotoxy(x, y);
 }
 
 void Mlecz::akcja(){}

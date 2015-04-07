@@ -15,8 +15,11 @@ Trawa::~Trawa()
 }
 
 void Trawa::rysowanie(){
-	gotoxy(15, 6);
+	int x = wherex();
+	int y = wherey();
+	gotoxy(this->x, this->y);
 	cputs("T");
+	gotoxy(x, y);
 }
 
 void Trawa::akcja(){}

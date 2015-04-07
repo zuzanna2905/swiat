@@ -13,6 +13,9 @@ void Lis::akcja(){}
 void Lis::kolizja(){}
 
 void Lis::rysowanie(){
-	gotoxy(9, 10);
+	int x = wherex();
+	int y = wherey();
+	gotoxy(this->x, this->y);
 	cputs("L");
+	gotoxy(x, y);
 }

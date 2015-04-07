@@ -14,8 +14,11 @@ Guarana::~Guarana()
 }
 
 void Guarana::rysowanie(){
-	gotoxy(9, 6);
+	int x = wherex();
+	int y = wherey();
+	gotoxy(this->x, this->y);
 	cputs("G");
+	gotoxy(x, y);
 }
 
 void Guarana::akcja(){}

@@ -33,57 +33,57 @@ void wybierz(int m, int x, int y, Organizm *tab[20][20]){
 	{
 	case 1:
 		tab[x][y] = new Antylopa;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
 		tab[x][y]->rysowanie();
 		break;
 	case 2:
 		tab[x][y] = new	Guarana;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
-		tab[x][y]->rysowanie();
+		//tab[x][y]->rysowanie();
 		break;
 	case 3:
 		tab[x][y] = new	Lis;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
-		tab[x][y]->rysowanie();
+		//tab[x][y]->rysowanie();
 		break;
 	case 4:
 		tab[x][y] = new	Mlecz;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
-		tab[x][y]->rysowanie();
+		//tab[x][y]->rysowanie();
 		break;
 	case 5:
 		tab[x][y] = new	Owca;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
-		tab[x][y]->rysowanie();
+		//tab[x][y]->rysowanie();
 		break;
 	case 6:
 		tab[x][y] = new	Trawa;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
-		tab[x][y]->rysowanie();
+		//tab[x][y]->rysowanie();
 		break;
 	case 7:
 		tab[x][y] = new	Wilcze_jagody;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
-		tab[x][y]->rysowanie();
+		//tab[x][y]->rysowanie();
 		break;
 	case 8:
 		tab[x][y] = new	Wilk;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
-		tab[x][y]->rysowanie();
+		//tab[x][y]->rysowanie();
 		break;
 	case 9:
 		tab[x][y] = new	Zolw;
-		tab[x][y]->set_x(x + X);
+		tab[x][y]->set_x(3*x + X);
 		tab[x][y]->set_y(y + Y);
-		tab[x][y]->rysowanie();
+		//tab[x][y]->rysowanie();
 		break;
 	default:
 		break;

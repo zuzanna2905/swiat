@@ -10,15 +10,16 @@ Czlowiek::Czlowiek(){
 
 Czlowiek::~Czlowiek(){}
 
+void Czlowiek::akcja(){
 
-void Czlowiek::akcja(){}
+}
 
 void Czlowiek::kolizja(){}
 
 void Czlowiek::rysowanie(){
 	int x = wherex();
 	int y = wherey();
-	gotoxy(this->x, this->y);
-	cputs("X");
+			gotoxy(this->x, this->y);
+	cputs("C");
 	gotoxy(x, y);
 }

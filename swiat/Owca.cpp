@@ -13,6 +13,9 @@ void Owca::akcja(){}
 void Owca::kolizja(){}
 
 void Owca::rysowanie(){
-	gotoxy(13, 6);
-	cputs("G");
+	int x = wherex();
+	int y = wherey();
+	gotoxy(this->x, this->y);
+	cputs("O");
+	gotoxy(x, y);
 }

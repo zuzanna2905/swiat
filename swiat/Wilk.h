@@ -7,8 +7,6 @@ using namespace std;
 class Wilk : public Zwierze {
 	int si³a;
 	int inicjatywa;
-	int x;
-	int y;
 	//Swiat & ziemia;
 public:
 	Wilk();
