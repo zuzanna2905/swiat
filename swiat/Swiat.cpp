@@ -15,6 +15,7 @@ Swiat::Swiat(){
 	textbackground(BLACK);
 	clrscr();
 
+	srand(time(NULL));
 	// ustawienie wszystkich elementów tablicy na NULL'a
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
@@ -26,13 +27,15 @@ Swiat::Swiat(){
 	organizm[0][0]->set_x(7);
 	organizm[0][0]->set_y(6);
 	// przy ruchu zmienia siê index w tablicy ogranizm
-	//polozenie();
+	polozenie();
 
-	for (int i = 0; i < N; i += 3){
-		for (int j = 0; j < N; j += 2){
-			if (organizm[i][j] == NULL){
-				int m = 1;
-				losuj(i, j);
+
+
+	//for (int i = 0; i < N; i += 3){
+	//	for (int j = 0; j < N; j += 2){
+	//		if (organizm[i][j] == NULL){
+	//			int m = 1;
+				//				losuj(i, j);
 //				wybierz(m, i, j);
 				/*			organizm[i][j] = new Antylopa;
 							organizm[i][j]->set_x(3 * i + X);
@@ -40,9 +43,9 @@ Swiat::Swiat(){
 							organizm[i][j]->rysowanie();
 							}*/
 			}
-		}
-	}
-}
+//		}
+//	}
+//}
 
 Swiat::~Swiat(){}
 
@@ -98,25 +101,23 @@ void Swiat::wykonajTure(){
 
 void Swiat::losuj(int x, int y){
 		int m;
-		srand(time(NULL));
 		m = rand() % 9 + 1;
 		wybierz(m, x, y);
 }
 
 void Swiat::polozenie(){
-	//int x;
-	//int y;
-	//x = rand() % 20;
-	//y = rand() % 20;
-	//for (int i = 0; i < 30; i++){
-	//	//	if (organizm[x][y] == NULL){
-	//	losuj(x, y);
-	//	//	}
-	//}
+	int x = 0;
+	int y = 0;
+	for (int i = 0; i < 20; i++){
+		x = rand() % 20;
+		y = rand() % 20;
+		if (organizm[x][y] == NULL){
+			losuj(x, y);
+		}
+	}
 }
 
 void Swiat::wybierz(int m, int x, int y){
-	//m = 1;
 	switch (m)
 	{
 	case 1:
