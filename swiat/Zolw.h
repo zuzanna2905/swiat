@@ -5,13 +5,13 @@
 using namespace std;
 
 class Zolw : public Zwierze {
-	int si³a;
-	int inicjatywa;
+	//int si³a;
+	//int inicjatywa;
 	//Swiat & ziemia;
 public:
 	Zolw();
 	~Zolw();
-	void akcja();
+	void akcja(Organizm *organizm[20][20]);
 	void kolizja();
 	void rysowanie();
 };

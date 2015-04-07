@@ -11,7 +11,7 @@ class Lis : public Zwierze {
 public:
 	Lis();
 	~Lis();
-	void akcja();
+	void akcja(Organizm *organizm[20][20]);
 	void kolizja();
 	void rysowanie();
 };

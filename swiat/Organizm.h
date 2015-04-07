@@ -10,7 +10,7 @@ protected:
 	int y;
 
 public:
-	virtual void akcja() = 0;
+	virtual void akcja(Organizm *organizm[20][20]) = 0;
 	virtual void kolizja() = 0;
 	virtual void rysowanie() = 0;
 	void set_x(int x) { this->x = x; };

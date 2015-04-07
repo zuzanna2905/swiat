@@ -92,7 +92,7 @@ void Swiat::wykonajTure(){
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
 			if (organizm[i][j] != NULL) {
-				organizm[i][j]->akcja();
+				organizm[i][j]->akcja(organizm);
 			}
 		}
 	}
@@ -108,7 +108,7 @@ void Swiat::losuj(int x, int y){
 void Swiat::polozenie(){
 	int x = 0;
 	int y = 0;
-	for (int i = 0; i < 20; i++){
+	for (int i = 0; i < 5; i++){
 		x = rand() % 20;
 		y = rand() % 20;
 		if (organizm[x][y] == NULL){
@@ -118,6 +118,7 @@ void Swiat::polozenie(){
 }
 
 void Swiat::wybierz(int m, int x, int y){
+	m = 1;
 	switch (m)
 	{
 	case 1:

@@ -10,7 +10,7 @@ public:
 	Trawa();
 	~Trawa();
 	void rysowanie();
-	void akcja();
+	void akcja(Organizm *organizm[20][20]);
 	void kolizja();
 };
 

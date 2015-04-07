@@ -11,9 +11,9 @@ class Zwierze : public Organizm {
 	//int y;
 public:
 	//virtual void akcja() {
-	 void akcja(Organizm *organizm[20][20]) {
+	virtual void akcja(Organizm *organizm[20][20]) {
 		Organizm *tmp = organizm[x][y];
-		int x1;
+		int x1 = x;
 		organizm[x][y] = NULL;
 		int a = rand() % 4;
 		if (a == 0){ x1 = x + 1; x += 3; }

@@ -11,7 +11,7 @@ class Owca : public Zwierze {
 public:
 	Owca();
 	~Owca();
-	void akcja();
+	void akcja(Organizm *organizm[20][20]);
 	void kolizja();
 	void rysowanie();
 };

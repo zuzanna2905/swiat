@@ -9,6 +9,6 @@ class Roslina : public Organizm {
 	//int x;
 	//int y;
 public:
-	virtual void akcja() = 0;
+	virtual void akcja(Organizm *organizm[20][20]) = 0;
 	virtual void kolizja() = 0;
 };

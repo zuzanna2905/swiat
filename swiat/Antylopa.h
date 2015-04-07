@@ -13,7 +13,7 @@ class Antylopa : public Zwierze {
 public:
 	Antylopa();
 	~Antylopa();
-	void akcja();
+	void akcja(Organizm *organizm[20][20]);
 	void kolizja();
 	void rysowanie();
 };
