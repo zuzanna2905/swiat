@@ -10,14 +10,19 @@ class Zwierze : public Organizm {
 	//int x;
 	//int y;
 public:
-	virtual void akcja() {
-		int a = 0;
-		srand(time(NULL));
-		a = rand() % 4;
-		if (a == 0){ x += 1; }
-		else if (a == 1){ x -= 1; }
+	//virtual void akcja() {
+	 void akcja(Organizm *organizm[20][20]) {
+		Organizm *tmp = organizm[x][y];
+		int x1;
+		organizm[x][y] = NULL;
+		int a = rand() % 4;
+		if (a == 0){ x1 = x + 1; x += 3; }
+		else if (a == 1){ x1 = x - 1; x -= 3; }
 		else if (a == 2){ y += 1; }
 		else{ y -= 1; }
+		organizm[x1][y] = tmp;
+		tmp = NULL;
+
 	};
-	virtual void kolizja() = 0;
+	 void kolizja(){};
 };
