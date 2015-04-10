@@ -81,7 +81,6 @@
     <ClCompile Include="Antylopa.cpp" />
     <ClCompile Include="Conio2.cpp" />
     <ClCompile Include="Czlowiek.cpp" />
-    <ClCompile Include="Funkcje.cpp" />
     <ClCompile Include="Guarana.cpp" />
     <ClCompile Include="Lis.cpp" />
     <ClCompile Include="Main.cpp" />

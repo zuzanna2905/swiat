@@ -19,7 +19,6 @@ void Lis::akcja(Organizm *organizm[20][20]) {
 	else{ y -= 1; }
 	organizm[x1][y] = tmp;
 	tmp = NULL;
-
 }
 
 void Lis::kolizja(){}

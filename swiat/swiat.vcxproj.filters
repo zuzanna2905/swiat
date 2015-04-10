@@ -54,9 +54,6 @@
     <ClCompile Include="Conio2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Funkcje.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Swiat.h">

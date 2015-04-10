@@ -7,7 +7,7 @@ class Czlowiek : public Zwierze {
 public:
 	Czlowiek();
 	~Czlowiek();
-	void akcja();
+	virtual void akcja(Organizm * organizm[20][20]);
 	void kolizja();
 	void rysowanie();
 

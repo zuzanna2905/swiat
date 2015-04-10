@@ -3,7 +3,6 @@
 #include "Conio2.h"
 #include "Organizm.h"
 #include "Czlowiek.h"
-#include "Funkcje.h"
 #include <ctime>
 using namespace std;
 #define N 20
@@ -28,24 +27,8 @@ Swiat::Swiat(){
 	organizm[0][0]->set_y(6);
 	// przy ruchu zmienia siê index w tablicy ogranizm
 	polozenie();
+}
 
-
-
-	//for (int i = 0; i < N; i += 3){
-	//	for (int j = 0; j < N; j += 2){
-	//		if (organizm[i][j] == NULL){
-	//			int m = 1;
-				//				losuj(i, j);
-//				wybierz(m, i, j);
-				/*			organizm[i][j] = new Antylopa;
-							organizm[i][j]->set_x(3 * i + X);
-							organizm[i][j]->set_y(j + Y);
-							organizm[i][j]->rysowanie();
-							}*/
-			}
-//		}
-//	}
-//}
 
 Swiat::~Swiat(){}
 
@@ -118,7 +101,7 @@ void Swiat::polozenie(){
 }
 
 void Swiat::wybierz(int m, int x, int y){
-	m = 1;
+	m = 9;
 	switch (m)
 	{
 	case 1:

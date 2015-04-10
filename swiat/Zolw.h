@@ -11,7 +11,7 @@ class Zolw : public Zwierze {
 public:
 	Zolw();
 	~Zolw();
-	void akcja(Organizm *organizm[20][20]);
+	virtual void akcja(Organizm *organizm[20][20]);
 	void kolizja();
 	void rysowanie();
 };
