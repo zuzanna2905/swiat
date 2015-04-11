@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include "Organizm.h"
 #include "Antylopa.h"
 #include "Guarana.h"

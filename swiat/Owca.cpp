@@ -1,6 +1,5 @@
 #include "Owca.h"
 #include <iostream>
-using namespace std;
 
 Owca::Owca(int m){
 	si³a = 4;

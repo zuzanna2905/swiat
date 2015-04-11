@@ -1,14 +1,9 @@
 #pragma once
-#include <iostream>
-#include "Organizm.h" 
-using namespace std;
+#include "Organizm.h"
+#include "Conio2.h"
 
 class Roslina : public Organizm {
-	//int si³a;
-	//int inicjatywa;
-	//int x;
-	//int y;
 public:
 	virtual void akcja(Organizm *organizm[20][20]) = 0;
-	virtual void kolizja() = 0;
+	virtual bool kolizja() = 0;
 };

@@ -1,6 +1,5 @@
 #include "Lis.h"
-#include <iostream>
-using namespace std;
+#include <random>
 
 Lis::Lis(int m){
 	si³a = 3;

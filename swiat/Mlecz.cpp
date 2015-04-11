@@ -1,6 +1,5 @@
 #include "Mlecz.h"
 #include <iostream>
-using namespace std;
 
 Mlecz::Mlecz(int m)
 {

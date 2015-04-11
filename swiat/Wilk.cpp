@@ -1,6 +1,5 @@
 #include "Wilk.h"
 #include <iostream>
-using namespace std;
 
 Wilk::Wilk(int m){
 	si³a = 9;

@@ -1,6 +1,5 @@
 #include "Guarana.h"
-#include <iostream>
-using namespace std;
+#include <random>
 
 Guarana::Guarana(int m)
 {
@@ -39,4 +38,4 @@ void Guarana::rysowanie(){
 
 
 
-void Guarana::kolizja(Organizm *organizm[20][20], int x, int y){}
+bool Guarana::kolizja(Organizm *organizm[20][20], int x, int y){ return true; }

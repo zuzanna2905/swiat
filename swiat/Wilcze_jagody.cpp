@@ -1,6 +1,5 @@
 #include "Wilcze_jagody.h"
 #include <iostream>
-using namespace std;
 
 
 Wilcze_jagody::Wilcze_jagody(int m)
@@ -38,5 +37,4 @@ void Wilcze_jagody::rysowanie(){
 	gotoxy(x, y);
 }
 
-
-void Wilcze_jagody::kolizja(Organizm *organizm[20][20], int x, int y){}
+bool Wilcze_jagody::kolizja(Organizm *organizm[20][20], int x, int y){ return true; }

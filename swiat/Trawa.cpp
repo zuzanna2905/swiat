@@ -1,6 +1,5 @@
 #include "Trawa.h"
 #include <iostream>
-using namespace std;
 
 
 Trawa::Trawa(int m)

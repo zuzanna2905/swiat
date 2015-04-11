@@ -1,6 +1,5 @@
-#include <iostream>
 #include "Antylopa.h"
-using namespace std;
+#include <random>
 
 Antylopa::Antylopa(int m)
 {
@@ -55,8 +54,8 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 	delete tmp;
 }
 
-void Antylopa::kolizja(Organizm *organizm[20][20], int x, int y){
-	cout << "X" << endl;
+bool Antylopa::kolizja(Organizm *organizm[20][20], int x, int y){
+	return true;
 }
 
 void Antylopa::rysowanie(){

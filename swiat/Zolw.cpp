@@ -1,6 +1,5 @@
 #include "Zolw.h"
 #include <iostream>
-using namespace std;
 
 Zolw::Zolw(int m){
 	si³a = 2;
@@ -53,7 +52,7 @@ void Zolw::akcja(Organizm *organizm[20][20]) {
 	}
 }
 
-void Zolw::kolizja(Organizm *organizm[20][20], int x, int y){}
+bool Zolw::kolizja(Organizm *organizm[20][20], int x, int y){ return true; }
 
 void Zolw::rysowanie(){
 	int x = wherex();

@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-#include "Conio2.h"
 
 class Organizm {
 protected:
@@ -13,7 +11,7 @@ protected:
 	int id;
 public:
 	virtual void akcja(Organizm *organizm[20][20])  = 0; 
-	virtual void kolizja(Organizm *organizm[20][20], int x, int y) = 0;
+	virtual bool kolizja(Organizm *organizm[20][20], int x, int y) = 0;
 	virtual void rysowanie() = 0;
 	void set_x(int x) { this->x = x; };
 	void set_y(int y) { this->y = y; };
@@ -22,4 +20,5 @@ public:
 	void rosnij(){ wiek++; };
 	int get_wiek(){ return wiek; };
 	int get_id(){ return id; };
+	int get_si³a(){ return si³a; };
 };

@@ -91,12 +91,12 @@
     <ClCompile Include="Wilcze_jagody.cpp" />
     <ClCompile Include="Wilk.cpp" />
     <ClCompile Include="Zolw.cpp" />
+    <ClCompile Include="Zwierze.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Antylopa.h" />
     <ClInclude Include="Conio2.h" />
     <ClInclude Include="Czlowiek.h" />
-    <ClInclude Include="Funkcje.h" />
     <ClInclude Include="Guarana.h" />
     <ClInclude Include="Lis.h" />
     <ClInclude Include="Mlecz.h" />

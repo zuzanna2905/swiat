@@ -1,7 +1,5 @@
-#include <iostream>
-#include "Conio2.h"
 #include "Czlowiek.h"
-using namespace std;
+#include <random>
 
 Czlowiek::Czlowiek(){
 	si³a = 5;
@@ -24,7 +22,7 @@ void Czlowiek::akcja(Organizm * organizm[20][20]){
 	tmp = NULL;
 }
 
-void Czlowiek::kolizja(){}
+bool Czlowiek::kolizja(){ return true; }
 
 void Czlowiek::rysowanie(){
 	int x = wherex();
