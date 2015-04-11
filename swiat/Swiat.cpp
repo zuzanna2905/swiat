@@ -117,34 +117,34 @@ void Swiat::wybierz(int m, int x, int y){
 	switch (m)
 	{
 	case 1:
-		organizm[x][y] = new Antylopa;
+		organizm[x][y] = new Antylopa(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
 		break;
 	case 2:
-		organizm[x][y] = new Wilk;
+		organizm[x][y] = new Wilk(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
 		break;
 	case 3:
-		organizm[x][y] = new Owca;
+		organizm[x][y] = new Owca(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
 		break;
 	case 4:
-		organizm[x][y] = new Zolw;
+		organizm[x][y] = new Zolw(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->rysowanie();
 		break;
 	case 5:
-		organizm[x][y] = new Lis;
+		organizm[x][y] = new Lis(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->rysowanie();

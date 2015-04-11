@@ -9,7 +9,7 @@ class Owca : public Zwierze {
 	int inicjatywa;
 	//Swiat & ziemia;
 public:
-	Owca();
+	Owca(int m);
 	~Owca();
 	void rysowanie();
 };

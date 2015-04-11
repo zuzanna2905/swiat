@@ -2,10 +2,11 @@
 #include <iostream>
 using namespace std;
 
-Wilk::Wilk(){
+Wilk::Wilk(int m){
 	si³a = 9;
 	inicjatywa = 5;
 	wiek = 0;
+	id = m;
 }
 
 void Wilk::rysowanie(){

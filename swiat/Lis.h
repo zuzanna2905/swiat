@@ -9,7 +9,7 @@ class Lis : public Zwierze {
 	int inicjatywa;
 	//Swiat & ziemia;
 public:
-	Lis();
+	Lis(int m);
 	~Lis();
 	virtual void akcja(Organizm *organizm[20][20]);
 	void rysowanie();

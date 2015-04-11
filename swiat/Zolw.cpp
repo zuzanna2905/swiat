@@ -2,10 +2,11 @@
 #include <iostream>
 using namespace std;
 
-Zolw::Zolw(){
+Zolw::Zolw(int m){
 	si³a = 2;
 	inicjatywa = 1;
 	wiek = 0;
+	id = m;
 }
 
 
@@ -52,7 +53,7 @@ void Zolw::akcja(Organizm *organizm[20][20]) {
 	}
 }
 
-void Zolw::kolizja(){}
+void Zolw::kolizja(Organizm *organizm[20][20], int x, int y){}
 
 void Zolw::rysowanie(){
 	int x = wherex();

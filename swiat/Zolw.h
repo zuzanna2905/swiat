@@ -9,9 +9,9 @@ class Zolw : public Zwierze {
 	//int inicjatywa;
 	//Swiat & ziemia;
 public:
-	Zolw();
+	Zolw(int m);
 	~Zolw();
 	virtual void akcja(Organizm *organizm[20][20]);
-	virtual void kolizja();
+	virtual void kolizja(Organizm *organizm[20][20], int x, int y);
 	void rysowanie();
 };

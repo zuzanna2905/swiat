@@ -3,11 +3,12 @@
 using namespace std;
 
 
-Trawa::Trawa()
+Trawa::Trawa(int m)
 {
 	si³a = 0;
 	inicjatywa = 0;
 	wiek = 0;
+	id = m;
 }
 
 
@@ -38,5 +39,3 @@ void Trawa::rysowanie(){
 }
 
 
-
-void Trawa::kolizja(){}

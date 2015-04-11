@@ -3,11 +3,12 @@
 using namespace std;
 
 
-Wilcze_jagody::Wilcze_jagody()
+Wilcze_jagody::Wilcze_jagody(int m)
 {
 	si³a = 99;
 	inicjatywa = 0;
 	wiek = 0;
+	id = m;
 }
 
 
@@ -38,4 +39,4 @@ void Wilcze_jagody::rysowanie(){
 }
 
 
-void Wilcze_jagody::kolizja(){}
+void Wilcze_jagody::kolizja(Organizm *organizm[20][20], int x, int y){}

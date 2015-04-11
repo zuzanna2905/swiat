@@ -2,11 +2,12 @@
 #include "Antylopa.h"
 using namespace std;
 
-Antylopa::Antylopa()
+Antylopa::Antylopa(int m)
 {
 	si³a = 4;
 	inicjatywa = 4;
 	wiek = 0;
+	id = m;
 }
 
 Antylopa::~Antylopa(){}
@@ -46,7 +47,7 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 		return;
 	}
 	if (organizm[x1][y1] != NULL) {
-		kolizja(organizm[x1][y1]);
+		kolizja(organizm, x1, y1);
 	}
 	organizm[x1][y1] = tmp;
 	organizm[x1][y1]->set_tura(true);
@@ -54,7 +55,7 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 	delete tmp;
 }
 
-void Antylopa::kolizja(Organizm* pOrganizm){
+void Antylopa::kolizja(Organizm *organizm[20][20], int x, int y){
 	cout << "X" << endl;
 }
 

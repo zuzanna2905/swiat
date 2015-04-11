@@ -9,7 +9,7 @@ class Wilk : public Zwierze {
 	//int inicjatywa;
 	//Swiat & ziemia;
 public:
-	Wilk();
+	Wilk(int m);
 	~Wilk();
 	void rysowanie();
 };

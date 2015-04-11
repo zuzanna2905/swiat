@@ -2,11 +2,12 @@
 #include <iostream>
 using namespace std;
 
-Mlecz::Mlecz()
+Mlecz::Mlecz(int m)
 {
 	si³a = 0;
 	inicjatywa = 0;
 	wiek = 0;
+	id = m;
 }
 
 
@@ -35,7 +36,3 @@ void Mlecz::rysowanie(){
 	cputs("M");
 	gotoxy(x, y);
 }
-
-
-
-void Mlecz::kolizja(){}

@@ -2,10 +2,11 @@
 #include <iostream>
 using namespace std;
 
-Lis::Lis(){
+Lis::Lis(int m){
 	si³a = 3;
 	inicjatywa = 7;
 	wiek = 0;
+	id = m;
 }
 
 

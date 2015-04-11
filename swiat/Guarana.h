@@ -6,10 +6,10 @@ class Guarana : public Roslina {
 	int si³a;
 	int inicjatywa;
 public:
-	Guarana();
+	Guarana(int m);
 	~Guarana();
 	void rysowanie();
 	void akcja(Organizm *organizm[20][20]);
-	void kolizja();
+	void kolizja(Organizm *organizm[20][20], int x, int y);
 };
 

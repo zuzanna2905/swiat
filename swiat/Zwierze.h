@@ -18,7 +18,7 @@ public:
 		int y1 = y - 6;
 		int a = rand() % 4;
 		gotoxy(x, y);
-		if (a == 0 && x < 65){
+		if (a == 0 && x < 64){
 			organizm[x1][y1] = NULL;
 			cputs(" ");
 			x1 += 1;
@@ -47,7 +47,7 @@ public:
 			return;
 		}
 		if (organizm[x1][y1] != NULL) {
-			kolizja(organizm[x1][y1]);
+			kolizja(organizm, x1, y1);
 		}
 		organizm[x1][y1] = tmp;
 		organizm[x1][y1]->set_tura(true);
@@ -55,12 +55,12 @@ public:
 		delete tmp;
 	};
 
-	virtual void kolizja(Organizm* pOrganizm)
+	virtual void kolizja(Organizm* organizm[20][20], int x, int y)
 	 {
 		 //cout << typeid(this).name()
 		//	 << " " << typeid(pOrganizm).name() << endl;
 
-		 if (typeid(this) == typeid(pOrganizm))
+		 if (id == organizm[x][y]->get_id())	
 		 {
 			 cout << "-" << endl;
 		 }

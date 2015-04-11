@@ -2,10 +2,11 @@
 #include <iostream>
 using namespace std;
 
-Owca::Owca(){
+Owca::Owca(int m){
 	si³a = 4;
 	inicjatywa = 4;
-	wiek = 0;
+	wiek = 0; 
+	id = m;
 }
 
 void Owca::rysowanie(){

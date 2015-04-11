@@ -7,10 +7,9 @@ class Trawa :
 	int si³a;
 	int inicjatywa;
 public:
-	Trawa();
+	Trawa(int m);
 	~Trawa();
 	void rysowanie();
 	void akcja(Organizm *organizm[20][20]);
-	void kolizja();
 };
 

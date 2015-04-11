@@ -11,9 +11,9 @@ class Antylopa : public Zwierze {
 	//int y;
 	// Swiat & ziemia;
 public:
-	Antylopa();
+	Antylopa(int m);
 	~Antylopa();
 	virtual void akcja(Organizm *organizm[20][20]);
-	virtual void kolizja(Organizm* pOrganizm);
+	virtual void kolizja(Organizm *organizm[20][20], int x, int y);
 	void rysowanie();
 };

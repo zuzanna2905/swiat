@@ -2,11 +2,12 @@
 #include <iostream>
 using namespace std;
 
-Guarana::Guarana()
+Guarana::Guarana(int m)
 {
 	si³a = 0;
 	inicjatywa = 0;
 	wiek = 0;
+	id = m;
 }
 
 
@@ -38,4 +39,4 @@ void Guarana::rysowanie(){
 
 
 
-void Guarana::kolizja(){}
+void Guarana::kolizja(Organizm *organizm[20][20], int x, int y){}
