@@ -23,8 +23,8 @@ int main(){
 		else if (zn == 0x50) y += 1;
 		else if (zn == 0x4b) x -= 3;
 		else if (zn == 0x4d) x += 3;
-		gotoxy(x,y);
 		swiat.wykonajTure();
+		gotoxy(x,y);
 	} while (zn != 'q');
 	return 0;
 }

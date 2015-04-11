@@ -7,9 +7,6 @@ Wilk::Wilk(){
 	inicjatywa = 5;
 }
 
-
-void Wilk::akcja(Organizm *organizm[20][20]) {}
-
 void Wilk::kolizja(){}
 
 void Wilk::rysowanie(){

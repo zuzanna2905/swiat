@@ -19,6 +19,8 @@ class Swiat {
 	void losuj(int, int);
 	void wybierz(int, int, int);
 	void polozenie();
+	void zakonczTure();
+
 public:
 	Swiat();
 	~Swiat();

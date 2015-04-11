@@ -22,9 +22,9 @@ Swiat::Swiat(){
 		}
 	}
 	//zak³adam sobie, ¿e cz³owiek zawsze zaczyna w 0 0
-	organizm[0][0] = new Czlowiek;
+	/*organizm[0][0] = new Czlowiek;
 	organizm[0][0]->set_x(7);
-	organizm[0][0]->set_y(6);
+	organizm[0][0]->set_y(6);*/
 	// przy ruchu zmienia siê index w tablicy ogranizm
 	polozenie();
 }
@@ -74,24 +74,35 @@ void Swiat::rysujObiekty() {
 void Swiat::wykonajTure(){
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
-			if (organizm[i][j] != NULL) {
+			if (organizm[i][j] != NULL && !organizm[i][j]->get_tura()) {
 				organizm[i][j]->akcja(organizm);
 			}
 		}
 	}
 	rysujObiekty();
+	zakonczTure();
+}
+
+void Swiat::zakonczTure(){
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			if (organizm[i][j] != NULL) {
+				organizm[i][j]->set_tura(false);
+			}
+		}
+	}
 }
 
 void Swiat::losuj(int x, int y){
 		int m;
-		m = rand() % 9 + 1;
+		m = rand() % 3 + 1;
 		wybierz(m, x, y);
 }
 
 void Swiat::polozenie(){
 	int x = 0;
 	int y = 0;
-	for (int i = 0; i < 5; i++){
+	for (int i = 0; i < 12; i++){
 		x = rand() % 20;
 		y = rand() % 20;
 		if (organizm[x][y] == NULL){
@@ -101,25 +112,28 @@ void Swiat::polozenie(){
 }
 
 void Swiat::wybierz(int m, int x, int y){
-	m = 9;
+	//m = 1;
 	switch (m)
 	{
 	case 1:
 		organizm[x][y] = new Antylopa;
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
 		break;
 	case 2:
-		organizm[x][y] = new	Guarana;
+		organizm[x][y] = new Wilk;
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
 		break;
 	case 3:
-		organizm[x][y] = new	Lis;
+		organizm[x][y] = new Owca;
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
 		break;
 	case 4:
@@ -129,7 +143,7 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y]->rysowanie();
 		break;
 	case 5:
-		organizm[x][y] = new	Owca;
+		organizm[x][y] = new Lis;
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->rysowanie();
@@ -147,7 +161,7 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y]->rysowanie();
 		break;
 	case 8:
-		organizm[x][y] = new	Wilk;
+		organizm[x][y] = new Guarana;
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->rysowanie();

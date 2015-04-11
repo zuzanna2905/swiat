@@ -7,7 +7,6 @@ Owca::Owca(){
 	inicjatywa = 4;
 }
 
-void Owca::akcja(Organizm *organizm[20][20]) {}
 
 void Owca::kolizja(){}
 

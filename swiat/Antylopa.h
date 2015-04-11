@@ -14,6 +14,6 @@ public:
 	Antylopa();
 	~Antylopa();
 	virtual void akcja(Organizm *organizm[20][20]);
-	void kolizja();
+	virtual void kolizja();
 	void rysowanie();
 };

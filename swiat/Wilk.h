@@ -11,7 +11,6 @@ class Wilk : public Zwierze {
 public:
 	Wilk();
 	~Wilk();
-	void akcja(Organizm *organizm[20][20]);
 	void kolizja();
 	void rysowanie();
 };
