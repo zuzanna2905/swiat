@@ -5,6 +5,7 @@ using namespace std;
 Wilk::Wilk(){
 	si³a = 9;
 	inicjatywa = 5;
+	wiek = 0;
 }
 
 void Wilk::rysowanie(){

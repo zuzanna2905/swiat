@@ -5,6 +5,7 @@ using namespace std;
 Zolw::Zolw(){
 	si³a = 2;
 	inicjatywa = 1;
+	wiek = 0;
 }
 
 

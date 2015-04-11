@@ -5,6 +5,7 @@ using namespace std;
 Owca::Owca(){
 	si³a = 4;
 	inicjatywa = 4;
+	wiek = 0;
 }
 
 void Owca::rysowanie(){

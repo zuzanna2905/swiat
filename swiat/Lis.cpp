@@ -5,6 +5,7 @@ using namespace std;
 Lis::Lis(){
 	si³a = 3;
 	inicjatywa = 7;
+	wiek = 0;
 }
 
 

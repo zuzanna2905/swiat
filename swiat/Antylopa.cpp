@@ -6,6 +6,7 @@ Antylopa::Antylopa()
 {
 	si³a = 4;
 	inicjatywa = 4;
+	wiek = 0;
 }
 
 Antylopa::~Antylopa(){}
@@ -45,7 +46,7 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 		return;
 	}
 	if (organizm[x1][y1] != NULL) {
-		kolizja();
+		kolizja(organizm[x1][y1]);
 	}
 	organizm[x1][y1] = tmp;
 	organizm[x1][y1]->set_tura(true);
@@ -53,7 +54,7 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 	delete tmp;
 }
 
-void Antylopa::kolizja(){
+void Antylopa::kolizja(Organizm* pOrganizm){
 	cout << "X" << endl;
 }
 

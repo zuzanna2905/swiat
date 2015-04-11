@@ -6,6 +6,7 @@ using namespace std;
 Czlowiek::Czlowiek(){
 	si³a = 5;
 	inicjatywa = 4;
+	wiek = 0;
 }
 
 Czlowiek::~Czlowiek(){}

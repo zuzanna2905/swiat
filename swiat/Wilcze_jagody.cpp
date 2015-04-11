@@ -7,6 +7,7 @@ Wilcze_jagody::Wilcze_jagody()
 {
 	si³a = 99;
 	inicjatywa = 0;
+	wiek = 0;
 }
 
 

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <ctime>
 #include "Organizm.h" 
+#include <typeinfo>
 using namespace std;
 
 class Zwierze : public Organizm {
@@ -46,7 +47,7 @@ public:
 			return;
 		}
 		if (organizm[x1][y1] != NULL) {
-			kolizja();
+			kolizja(organizm[x1][y1]);
 		}
 		organizm[x1][y1] = tmp;
 		organizm[x1][y1]->set_tura(true);
@@ -54,8 +55,18 @@ public:
 		delete tmp;
 	};
 
-	 virtual void kolizja()
+	virtual void kolizja(Organizm* pOrganizm)
 	 {
-		 cout << "+" << endl;
+		 //cout << typeid(this).name()
+		//	 << " " << typeid(pOrganizm).name() << endl;
+
+		 if (typeid(this) == typeid(pOrganizm))
+		 {
+			 cout << "-" << endl;
+		 }
+		 else {
+			 cout << "+" << endl;
+		 }
+		 
 	 };
 };

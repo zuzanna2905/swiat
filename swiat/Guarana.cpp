@@ -6,6 +6,7 @@ Guarana::Guarana()
 {
 	si³a = 0;
 	inicjatywa = 0;
+	wiek = 0;
 }
 
 
