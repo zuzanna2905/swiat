@@ -21,8 +21,6 @@ void Lis::akcja(Organizm *organizm[20][20]) {
 	tmp = NULL;
 }
 
-void Lis::kolizja(){}
-
 void Lis::rysowanie(){
 	int x = wherex();
 	int y = wherey();

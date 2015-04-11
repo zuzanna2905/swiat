@@ -7,9 +7,6 @@ Owca::Owca(){
 	inicjatywa = 4;
 }
 
-
-void Owca::kolizja(){}
-
 void Owca::rysowanie(){
 	int x = wherex();
 	int y = wherey();

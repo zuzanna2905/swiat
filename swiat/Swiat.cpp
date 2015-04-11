@@ -95,7 +95,7 @@ void Swiat::zakonczTure(){
 
 void Swiat::losuj(int x, int y){
 		int m;
-		m = rand() % 3 + 1;
+		m = rand() % 4 + 1;
 		wybierz(m, x, y);
 }
 
@@ -112,7 +112,7 @@ void Swiat::polozenie(){
 }
 
 void Swiat::wybierz(int m, int x, int y){
-	//m = 1;
+
 	switch (m)
 	{
 	case 1:
@@ -137,7 +137,7 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y]->rysowanie();
 		break;
 	case 4:
-		organizm[x][y] = new	Mlecz;
+		organizm[x][y] = new Zolw;
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->rysowanie();
@@ -167,7 +167,7 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y]->rysowanie();
 		break;
 	case 9:
-		organizm[x][y] = new	Zolw;
+		organizm[x][y] = new Mlecz;
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->rysowanie();

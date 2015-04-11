@@ -44,6 +44,9 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 		akcja(organizm);
 		return;
 	}
+	if (organizm[x1][y1] != NULL) {
+		kolizja();
+	}
 	organizm[x1][y1] = tmp;
 	organizm[x1][y1]->set_tura(true);
 	tmp = NULL;
@@ -51,7 +54,7 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 }
 
 void Antylopa::kolizja(){
-	cout << "gowno" << endl;
+	cout << "X" << endl;
 }
 
 void Antylopa::rysowanie(){

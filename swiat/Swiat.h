@@ -20,7 +20,6 @@ class Swiat {
 	void wybierz(int, int, int);
 	void polozenie();
 	void zakonczTure();
-
 public:
 	Swiat();
 	~Swiat();

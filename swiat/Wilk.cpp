@@ -7,8 +7,6 @@ Wilk::Wilk(){
 	inicjatywa = 5;
 }
 
-void Wilk::kolizja(){}
-
 void Wilk::rysowanie(){
 	int x = wherex();
 	int y = wherey();

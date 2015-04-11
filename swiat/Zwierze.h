@@ -45,11 +45,17 @@ public:
 			akcja(organizm);
 			return;
 		}
+		if (organizm[x1][y1] != NULL) {
+			kolizja();
+		}
 		organizm[x1][y1] = tmp;
 		organizm[x1][y1]->set_tura(true);
 		tmp = NULL;
 		delete tmp;
 	};
 
-	 void kolizja(){};
+	 virtual void kolizja()
+	 {
+		 cout << "+" << endl;
+	 };
 };

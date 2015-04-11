@@ -11,7 +11,6 @@ class Lis : public Zwierze {
 public:
 	Lis();
 	~Lis();
-	void akcja(Organizm *organizm[20][20]);
-	void kolizja();
+	virtual void akcja(Organizm *organizm[20][20]);
 	void rysowanie();
 };
