@@ -35,3 +35,12 @@ public:
 		
 	};
 };
+
+//bool sortuj(Organizm* a, Organizm* b) {
+//	if (a->inicjatywa <b->inicjatywa || a->inicjatywa > b->inicjatywa) {
+//		return a->inicjatywa < b->inicjatywa;
+//	}
+//	else { // jak inicjatywy sa rowne to decyduje wiek
+//		return a->get_wiek() < b->get_wiek();
+//	}
+//}

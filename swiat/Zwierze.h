@@ -4,8 +4,8 @@
 #include <list>
 
 class Zwierze : public Organizm {
-	void stworz(Organizm* organizm[20][20], int m, int x, int y, std::list<Organizm*>&);
 public:
+	void stworz(Organizm* organizm[20][20], int m, int x, int y, std::list<Organizm*>&);
 	virtual bool akcja(Organizm *organizm[20][20], std::list<Organizm*>& inicjatywy, int i);
 	virtual bool kolizja(Organizm* organizm[20][20], int x, int y, bool& flaga, std::list <Organizm*>&);
 };

@@ -138,7 +138,11 @@ bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y, bool& flaga, std
 		return false;
 	}
 		else {
-			if (this->si³a > organizm[x][y]->get_si³a()){
+			if (this->si³a < 5 && organizm[x][y]->get_id()==4){ // zolw odparl atak
+				flaga = true;
+				return false;
+			}
+			else if (this->si³a > organizm[x][y]->get_si³a()){
 				return true;
 			}
 			else{
@@ -172,21 +176,22 @@ void Zwierze::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list<
 			organizm[x][y]->set_x(3 * x + X);
 			organizm[x][y]->set_y(y + Y);
 			organizm[x][y]->set_tura(true);
-			organizm[x][y]->rysowanie();
-			inicjatywy.push_back(organizm[x][y]);
+			//organizm[x][y]->rysowanie();
+			inicjatywy.push_front(organizm[x][y]);
 			break;
 		case 4:
 			organizm[x][y] = new Zolw(m);
 			organizm[x][y]->set_x(3 * x + X);
 			organizm[x][y]->set_y(y + Y);
-			organizm[x][y]->rysowanie();
-			inicjatywy.push_back(organizm[x][y]);
+			organizm[x][y]->set_tura(true);
+			//organizm[x][y]->rysowanie();
+			inicjatywy.push_front(organizm[x][y]);
 			break;
 		case 5:
 			organizm[x][y] = new Lis(m);
 			organizm[x][y]->set_x(3 * x + X);
 			organizm[x][y]->set_y(y + Y);
-			organizm[x][y]->rysowanie();
+			//organizm[x][y]->rysowanie();
 			inicjatywy.push_back(organizm[x][y]);
 			break;
 	}

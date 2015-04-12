@@ -82,7 +82,6 @@ void Swiat::wykonajTure(){
 				inicjatywy.remove((*it++));
 			} else {
 				++it;
-
 			}
 		}
 		else {
@@ -90,13 +89,6 @@ void Swiat::wykonajTure(){
 		}
 	}
 
-	//for (int i = 0; i < N; i++) {
-	//	for (int j = 0; j < N; j++) {
-	//		if (organizm[i][j] != NULL && !organizm[i][j]->get_tura()) {
-	//			organizm[i][j]->akcja(organizm, inicjatywy);
-	//		}
-	//	}
-	//}
 	rysujObiekty();
 	zakonczTure();
 }
@@ -114,7 +106,7 @@ void Swiat::zakonczTure(){
 
 void Swiat::losuj(int x, int y){
 		int m;
-		m = rand() % 2 + 1;
+		m = rand() % 4 + 1;
 		wybierz(m, x, y);
 }
 
@@ -131,7 +123,7 @@ void Swiat::polozenie(){
 }
 
 void Swiat::wybierz(int m, int x, int y){
-	//m = 2;
+	//m = 4;
 	switch (m)
 	{
 	case 1:
@@ -162,6 +154,7 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y] = new Zolw(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
 		inicjatywy.push_back(organizm[x][y]);
 		break;
