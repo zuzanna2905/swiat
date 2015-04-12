@@ -21,7 +21,7 @@ int main(){
 		else if (zn == 0x4b) x -= 3;
 		else if (zn == 0x4d) x += 3;
 		else if (zn == '\0') continue;
-		swiat.wykonajTure();
+		swiat.wykonajTure(x, y);
 		gotoxy(x,y);
 	} while (zn != 'q');
 	return 0;

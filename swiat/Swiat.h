@@ -24,7 +24,8 @@ class Swiat {
 public:
 	Swiat();
 	~Swiat();
-	void wykonajTure();
+	void wykonajTure(int &x, int &y);
 	void rysujSwiat();
 	void rysujObiekty();
+
 };

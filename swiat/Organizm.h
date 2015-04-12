@@ -25,5 +25,7 @@ public:
 	int get_id(){ return id; };
 	int get_si³a(){ return si³a; };
 	int get_inicjatywa(){ return inicjatywa; };
+	int get_x() { return x; };
+	int get_y() { return y; };
 	
 };

@@ -36,9 +36,11 @@ Swiat::Swiat(){
 		}
 	}
 	//zak³adam sobie, ¿e cz³owiek zawsze zaczyna w 0 0
-	/*organizm[0][0] = new Czlowiek;
+	organizm[0][0] = new Czlowiek;
 	organizm[0][0]->set_x(7);
-	organizm[0][0]->set_y(6);*/
+	organizm[0][0]->set_y(6);
+	organizm[0][0]->rysowanie();
+	inicjatywy.push_back(organizm[0][0]);
 	// przy ruchu zmienia siê index w tablicy ogranizm
 	polozenie();
 }
@@ -85,22 +87,29 @@ void Swiat::rysujObiekty() {
 	}
 }
 
-void Swiat::wykonajTure(){
+void Swiat::wykonajTure(int &x, int &y){
 	inicjatywy.sort(OrganizmSort());
 
 	for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end();) {
 		if ((*it) != NULL && !(*it)->get_tura()) {
+			if ((*it)->get_id() == 10 ) {
+				dynamic_cast<Czlowiek*>((*it))->przesun(x, y);
+			}
 			if ((*it)->akcja(organizm, inicjatywy)) {
 				inicjatywy.remove((*it++));
 			} else {
+				if ((*it)->get_id() == 10) {
+					x = dynamic_cast<Czlowiek*>((*it))->get_x();
+					y = dynamic_cast<Czlowiek*>((*it))->get_y();
+				}
 				++it;
 			}
+
 		}
 		else {
 			++it;
 		}
 	}
-
 	rysujObiekty();
 	zakonczTure();
 }
