@@ -10,6 +10,19 @@ using namespace std;
 #define X 7
 #define Y 6
 
+class OrganizmSort {
+	public:
+		bool operator() (Organizm* a, Organizm* b) {
+			if (a->get_inicjatywa() <b->get_inicjatywa() || a->get_inicjatywa() > b->get_inicjatywa()) {
+				return a->get_inicjatywa() > b->get_inicjatywa();
+			}
+			else { // jak inicjatywy sa rowne to decyduje wiek
+				return a->get_wiek() > b->get_wiek();
+			}
+		}
+
+};
+
 Swiat::Swiat(){
 	settitle("Zuzanna Pusiewicz 155178");
 	textbackground(BLACK);
@@ -73,8 +86,7 @@ void Swiat::rysujObiekty() {
 }
 
 void Swiat::wykonajTure(){
-	// sortujemy wg inicjatywy i wieku
-	//std::sort(inicjatywy.begin(), inicjatywy.end());
+	inicjatywy.sort(OrganizmSort());
 
 	for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end();) {
 		if ((*it) != NULL && !(*it)->get_tura()) {

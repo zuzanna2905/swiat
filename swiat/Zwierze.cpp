@@ -54,10 +54,14 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 		if (kolizja(organizm, x1, y1, flaga, inicjatywy))
 		{
 			// ginie atakowany
+			if (organizm[x1][y1]->get_id() == 8){
+				zwieksz_si³e();
+			}
 			inicjatywy.remove(organizm[x1][y1]);
 			organizm[x1_old][y1_old] = NULL;
 			organizm[x1][y1] = tmp;
 			organizm[x1][y1]->set_tura(true);
+
 		}
 		else{
 			if (flaga || id == 5) {

@@ -1,5 +1,10 @@
 #include "Antylopa.h"
 #include <random>
+#define X 7
+#define Y 6
+#define GRANICA_1 60
+#define GRANICA_2 11
+#define GRANICA_3 20
 
 Antylopa::Antylopa(int m)
 {
@@ -13,31 +18,31 @@ Antylopa::~Antylopa(){}
 
 bool Antylopa::akcja(Organizm * organizm[20][20], std::list<Organizm*>& inicjatywy) {
 	bool usun = false;
-	Organizm *tmp = organizm[(x - 7) / 3][y - 6]; // 7 to X
-	int x1 = (x -7)/3; 
-	int y1 = y - 6;
+	Organizm *tmp = organizm[(x - X) / 3][y - Y];
+	int x1 = (x - X)/3; 
+	int y1 = y - Y;
 	int x_old = x;
 	int y_old = y;
 	int x1_old = x1;
 	int y1_old = y1;
 	int a = rand() % 4;
 	gotoxy(x, y);
-	if (a == 0 && x < 60){
+	if (a == 0 && x < GRANICA_1){
 		cputs(" ");
 		x1 += 2;
 		x += 6;
 	}
-	else if (a == 1 && x > 11){
+	else if (a == 1 && x > GRANICA_2){
 		cputs(" ");
 		x1 -= 2;
 		x -= 6;
 	}
-	else if (a == 2 && y < 20){
+	else if (a == 2 && y < GRANICA_3){
 		cputs(" ");
 		y1 += 2;
 		y += 2;
 	}
-	else if (a == 3 && y > 11){
+	else if (a == 3 && y > GRANICA_2){
 		cputs(" ");
 		y1 -= 2;
 		y -= 2;

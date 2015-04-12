@@ -18,30 +18,12 @@ public:
 	void set_x(int x) { this->x = x; };
 	void set_y(int y) { this->y = y; };
 	void set_tura(bool tura){ this->tura = tura; };
+	void zwieksz_si³e(){ si³a += 3; };
 	bool get_tura(){ return tura; };
 	void rosnij(){ wiek++; };
 	int get_wiek(){ return wiek; };
 	int get_id(){ return id; };
 	int get_si³a(){ return si³a; };
+	int get_inicjatywa(){ return inicjatywa; };
 	
-	bool operator< (const Organizm &other) const{
-		//if (inicjatywa < other.inicjatywa || inicjatywa > other.inicjatywa) {
-		//	return inicjatywa < other.inicjatywa;
-		//}
-		//else { // jak inicjatywy sa rowne to decyduje wiek
-		//	return wiek < other.wiek;
-		//}
-
-		return inicjatywa < other.inicjatywa;
-		
-	};
 };
-
-//bool sortuj(Organizm* a, Organizm* b) {
-//	if (a->inicjatywa <b->inicjatywa || a->inicjatywa > b->inicjatywa) {
-//		return a->inicjatywa < b->inicjatywa;
-//	}
-//	else { // jak inicjatywy sa rowne to decyduje wiek
-//		return a->get_wiek() < b->get_wiek();
-//	}
-//}
