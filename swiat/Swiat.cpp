@@ -4,6 +4,7 @@
 #include "Organizm.h"
 #include "Czlowiek.h"
 #include <ctime>
+#include <algorithm>
 using namespace std;
 #define N 20
 #define X 7
@@ -72,13 +73,30 @@ void Swiat::rysujObiekty() {
 }
 
 void Swiat::wykonajTure(){
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++) {
-			if (organizm[i][j] != NULL && !organizm[i][j]->get_tura()) {
-				organizm[i][j]->akcja(organizm);
+	// sortujemy wg inicjatywy i wieku
+	//std::sort(inicjatywy.begin(), inicjatywy.end());
+
+	for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end();) {
+		if ((*it) != NULL && !(*it)->get_tura()) {
+			if ((*it)->akcja(organizm, inicjatywy, 1)) {
+				inicjatywy.remove((*it++));
+			} else {
+				++it;
+
 			}
 		}
+		else {
+			++it;
+		}
 	}
+
+	//for (int i = 0; i < N; i++) {
+	//	for (int j = 0; j < N; j++) {
+	//		if (organizm[i][j] != NULL && !organizm[i][j]->get_tura()) {
+	//			organizm[i][j]->akcja(organizm, inicjatywy);
+	//		}
+	//	}
+	//}
 	rysujObiekty();
 	zakonczTure();
 }
@@ -122,6 +140,7 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
 		break;
 	case 2:
 		organizm[x][y] = new Wilk(m);
@@ -129,6 +148,7 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
 		break;
 	case 3:
 		organizm[x][y] = new Antylopa(m);
@@ -136,42 +156,49 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
 		break;
 	case 4:
 		organizm[x][y] = new Zolw(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
 		break;
 	case 5:
 		organizm[x][y] = new Lis(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
 		break;
 	//case 6:
 	//	organizm[x][y] = new	Trawa;
 	//	organizm[x][y]->set_x(3 * x + X);
 	//	organizm[x][y]->set_y(y + Y);
 	//	organizm[x][y]->rysowanie();
+	//	inicjatywy.push_back(organizm[x][y]);
 	//	break;
 	//case 7:
 	//	organizm[x][y] = new	Wilcze_jagody;
 	//	organizm[x][y]->set_x(3 * x + X);
 	//	organizm[x][y]->set_y(y + Y);
 	//	organizm[x][y]->rysowanie();
+	//	inicjatywy.push_back(organizm[x][y]);
 	//	break;
 	//case 8:
 	//	organizm[x][y] = new Guarana;
 	//	organizm[x][y]->set_x(3 * x + X);
 	//	organizm[x][y]->set_y(y + Y);
 	//	organizm[x][y]->rysowanie();
+	//	inicjatywy.push_back(organizm[x][y]);
 	//	break;
 	//case 9:
 	//	organizm[x][y] = new Mlecz;
 	//	organizm[x][y]->set_x(3 * x + X);
 	//	organizm[x][y]->set_y(y + Y);
 	//	organizm[x][y]->rysowanie();
+	//	inicjatywy.push_back(organizm[x][y]);
 	//	break;
 	default:
 		break;

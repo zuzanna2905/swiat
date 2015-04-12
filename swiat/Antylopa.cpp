@@ -11,7 +11,7 @@ Antylopa::Antylopa(int m)
 
 Antylopa::~Antylopa(){}
 
-void Antylopa::akcja(Organizm * organizm[20][20]) {
+bool Antylopa::akcja(Organizm * organizm[20][20], std::list<Organizm*>& inicjatywy, int i) {
 	Organizm *tmp = organizm[(x - 7) / 3][y - 6]; // 7 to X
 	int x1 = (x -7)/3; 
 	int y1 = y - 6;
@@ -42,20 +42,22 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 		y -= 2;
 	}
 	else {
-		akcja(organizm);
-		return;
+		akcja(organizm, inicjatywy, i);
+		return false;
 	}
 	bool flaga = false;
 	if (organizm[x1][y1] != NULL) {
-		kolizja(organizm, x1, y1, flaga);
+		kolizja(organizm, x1, y1, flaga, inicjatywy);
 	}
 	organizm[x1][y1] = tmp;
 	organizm[x1][y1]->set_tura(true);
 	tmp = NULL;
 	delete tmp;
+
+	return false;
 }
 
-bool Antylopa::kolizja(Organizm *organizm[20][20], int x, int y, bool& flaga){
+bool Antylopa::kolizja(Organizm *organizm[20][20], int x, int y, bool& flaga, std::list<Organizm*>& inicjatywy){
 	return true;
 }
 

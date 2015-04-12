@@ -12,17 +12,15 @@ int main(){
 	int x = 7;
 	int y = 6;
 	swiat.rysujSwiat();
-	gotoxy(x,y);/*
-	Antylopa a;
-	Organizm *b;
-	b = &a;
-	b->rysowanie();*/
+	gotoxy(x,y);
+
 	do {
 		zn = getch();
 		if (zn == 0x48) y -= 1;
 		else if (zn == 0x50) y += 1;
 		else if (zn == 0x4b) x -= 3;
 		else if (zn == 0x4d) x += 3;
+		else if (zn == '\0') continue;
 		swiat.wykonajTure();
 		gotoxy(x,y);
 	} while (zn != 'q');
