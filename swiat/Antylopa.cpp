@@ -45,8 +45,9 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 		akcja(organizm);
 		return;
 	}
+	bool flaga = false;
 	if (organizm[x1][y1] != NULL) {
-		kolizja(organizm, x1, y1);
+		kolizja(organizm, x1, y1, flaga);
 	}
 	organizm[x1][y1] = tmp;
 	organizm[x1][y1]->set_tura(true);
@@ -54,7 +55,7 @@ void Antylopa::akcja(Organizm * organizm[20][20]) {
 	delete tmp;
 }
 
-bool Antylopa::kolizja(Organizm *organizm[20][20], int x, int y){
+bool Antylopa::kolizja(Organizm *organizm[20][20], int x, int y, bool& flaga){
 	return true;
 }
 

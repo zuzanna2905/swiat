@@ -51,17 +51,23 @@ void Zwierze::akcja(Organizm* organizm[20][20]){
 		akcja(organizm);
 		return;
 	}
+	bool flaga = false; // ginie/mnozenie
 	if (organizm[x1][y1] != NULL) {
-		if (kolizja(organizm, x1, y1))
+		if (kolizja(organizm, x1, y1, flaga))
 		{
 			organizm[x1][y1] = tmp;
 			organizm[x1][y1]->set_tura(true);
 		}
 		else{
-			organizm[x1_old][y1_old] = tmp;
-			organizm[x1_old][y1_old]->set_tura(true);
-			x = x_old;
-			y = y_old;
+			if (flaga) {
+				organizm[x1_old][y1_old] = tmp;
+				organizm[x1_old][y1_old]->set_tura(true);
+				x = x_old;
+				y = y_old;
+			}
+			else {
+				//organizm[x1_old][y1_old] = NULL; // ginie
+			}
 		}
 	}
 	else {
@@ -72,7 +78,7 @@ void Zwierze::akcja(Organizm* organizm[20][20]){
 	delete tmp;
 }
 
-bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y){
+bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y, bool& flaga){
 	if (id == organizm[x][y]->get_id())
 	{
 		bool nowy = false;
@@ -114,21 +120,26 @@ bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y){
 			//	nowy = true;
 			//}
 		}
+		flaga = true;
 		return false;
 	}
 		else {
 			if (this->si³a > organizm[x][y]->get_si³a()){
 				return true;
 			}
+			else{
+				flaga = false;
+				return false;
+			}
 		}
-		return true;
+		//return true;
 }
 
 void Zwierze::stworz(Organizm* organizm[20][20], int m, int x, int y){
 		switch (m)
 		{
 		case 1:
-			organizm[x][y] = new Antylopa(m);
+			organizm[x][y] = new Owca(m);
 			organizm[x][y]->set_x(3 * x + X);
 			organizm[x][y]->set_y(y + Y);
 			organizm[x][y]->set_tura(false);
@@ -142,10 +153,10 @@ void Zwierze::stworz(Organizm* organizm[20][20], int m, int x, int y){
 			organizm[x][y]->rysowanie();
 			break;
 		case 3:
-			organizm[x][y] = new Owca(m);
+			organizm[x][y] = new Antylopa(m);
 			organizm[x][y]->set_x(3 * x + X);
 			organizm[x][y]->set_y(y + Y);
-			organizm[x][y]->set_tura(false);
+			organizm[x][y]->set_tura(true);
 			organizm[x][y]->rysowanie();
 			break;
 		case 4:

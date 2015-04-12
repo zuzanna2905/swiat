@@ -11,7 +11,7 @@ protected:
 	int id;
 public:
 	virtual void akcja(Organizm *organizm[20][20])  = 0; 
-	virtual bool kolizja(Organizm *organizm[20][20], int x, int y) = 0;
+	virtual bool kolizja(Organizm *organizm[20][20], int x, int y, bool &flaga) = 0;
 	virtual void rysowanie() = 0;
 	void set_x(int x) { this->x = x; };
 	void set_y(int y) { this->y = y; };
