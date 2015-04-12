@@ -78,7 +78,7 @@ void Swiat::wykonajTure(){
 
 	for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end();) {
 		if ((*it) != NULL && !(*it)->get_tura()) {
-			if ((*it)->akcja(organizm, inicjatywy, 1)) {
+			if ((*it)->akcja(organizm, inicjatywy)) {
 				inicjatywy.remove((*it++));
 			} else {
 				++it;
@@ -106,14 +106,15 @@ void Swiat::zakonczTure(){
 
 void Swiat::losuj(int x, int y){
 		int m;
-		m = rand() % 4 + 1;
+		m = rand() % 9 + 1;
 		wybierz(m, x, y);
+		//stworz();
 }
 
 void Swiat::polozenie(){
 	int x = 0;
 	int y = 0;
-	for (int i = 0; i < 12; i++){
+	for (int i = 0; i < 20; i++){
 		x = rand() % 20;
 		y = rand() % 20;
 		if (organizm[x][y] == NULL){
@@ -162,37 +163,42 @@ void Swiat::wybierz(int m, int x, int y){
 		organizm[x][y] = new Lis(m);
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
 		organizm[x][y]->rysowanie();
 		inicjatywy.push_back(organizm[x][y]);
 		break;
-	//case 6:
-	//	organizm[x][y] = new	Trawa;
-	//	organizm[x][y]->set_x(3 * x + X);
-	//	organizm[x][y]->set_y(y + Y);
-	//	organizm[x][y]->rysowanie();
-	//	inicjatywy.push_back(organizm[x][y]);
-	//	break;
-	//case 7:
-	//	organizm[x][y] = new	Wilcze_jagody;
-	//	organizm[x][y]->set_x(3 * x + X);
-	//	organizm[x][y]->set_y(y + Y);
-	//	organizm[x][y]->rysowanie();
-	//	inicjatywy.push_back(organizm[x][y]);
-	//	break;
-	//case 8:
-	//	organizm[x][y] = new Guarana;
-	//	organizm[x][y]->set_x(3 * x + X);
-	//	organizm[x][y]->set_y(y + Y);
-	//	organizm[x][y]->rysowanie();
-	//	inicjatywy.push_back(organizm[x][y]);
-	//	break;
-	//case 9:
-	//	organizm[x][y] = new Mlecz;
-	//	organizm[x][y]->set_x(3 * x + X);
-	//	organizm[x][y]->set_y(y + Y);
-	//	organizm[x][y]->rysowanie();
-	//	inicjatywy.push_back(organizm[x][y]);
-	//	break;
+	case 6:
+		organizm[x][y] = new Trawa(m);
+		organizm[x][y]->set_x(3 * x + X);
+		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
+		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
+		break;
+	case 7:
+		organizm[x][y] = new Wilcze_jagody(m);
+		organizm[x][y]->set_x(3 * x + X);
+		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
+		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
+		break;
+	case 8:
+		organizm[x][y] = new Guarana(m);
+		organizm[x][y]->set_x(3 * x + X);
+		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
+		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
+		break;
+	case 9:
+		organizm[x][y] = new Mlecz(m);
+		organizm[x][y]->set_x(3 * x + X);
+		organizm[x][y]->set_y(y + Y);
+		organizm[x][y]->set_tura(false);
+		organizm[x][y]->rysowanie();
+		inicjatywy.push_back(organizm[x][y]);
+		break;
 	default:
 		break;
 	}

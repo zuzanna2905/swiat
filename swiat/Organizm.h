@@ -11,8 +11,9 @@ protected:
 	int y;
 	int id;
 public:
-	virtual bool akcja(Organizm *organizm[20][20], std::list<Organizm*>&, int i) = 0;
+	virtual bool akcja(Organizm *organizm[20][20], std::list<Organizm*>&) = 0;
 	virtual bool kolizja(Organizm *organizm[20][20], int x, int y, bool &flaga, std::list <Organizm*>&) = 0;
+	void stworz(Organizm* organizm[20][20], int m, int x, int y, std::list<Organizm*>& inicjatywy);
 	virtual void rysowanie() = 0;
 	void set_x(int x) { this->x = x; };
 	void set_y(int y) { this->y = y; };

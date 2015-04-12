@@ -14,7 +14,8 @@
 #define X 7
 #define Y 6
 
-bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy, int i){
+// usun inty i
+bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy){
 	bool usun = false;
 	Organizm *tmp = organizm[(x - 7) / 3][y - 6]; // 7 to X
 	int x1 = (x - 7) / 3;
@@ -26,31 +27,27 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 	int a = rand() % 4;
 	gotoxy(x, y);
 	if (a == 0 && x < 64){
-		//organizm[x1][y1] = NULL;
 		cputs(" ");
 		x1 += 1;
 		x += 3;
 	}
 	else if (a == 1 && x > 7){
-		//organizm[x1][y1] = NULL;
 		cputs(" ");
 		x1 -= 1;
 		x -= 3;
 	}
 	else if (a == 2 && y < 25){
-		//organizm[x1][y1] = NULL;
 		cputs(" ");
 		y1 += 1;
 		y += 1;
 	}
 	else if (a == 3 && y > 6){
-		//organizm[x1][y1] = NULL;
 		cputs(" ");
 		y1 -= 1;
 		y -= 1;
 	}
 	else {
-		return akcja(organizm, inicjatywy, i);
+		return akcja(organizm, inicjatywy);
 	}
 	bool flaga = false; // ginie/mnozenie
 	if (organizm[x1][y1] != NULL) {
@@ -63,8 +60,8 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 			organizm[x1][y1]->set_tura(true);
 		}
 		else{
-			if (flaga) {
-				// rozmnazanie
+			if (flaga || id == 5) {
+				// rozmnazanie lub lis nie wchodzi na silniejszy
 				organizm[x1_old][y1_old] = tmp;
 				organizm[x1_old][y1_old]->set_tura(true);
 				x = x_old;
@@ -139,7 +136,7 @@ bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y, bool& flaga, std
 	}
 		else {
 			if (this->si³a < 5 && organizm[x][y]->get_id()==4){ // zolw odparl atak
-				flaga = true;
+ 				flaga = true;
 				return false;
 			}
 			else if (this->si³a > organizm[x][y]->get_si³a()){
@@ -150,49 +147,4 @@ bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y, bool& flaga, std
 				return false;
 			}
 		}
-}
-
-void Zwierze::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list<Organizm*>& inicjatywy){
-		switch (m)
-		{
-		case 1:
-			organizm[x][y] = new Owca(m);
-			organizm[x][y]->set_x(3 * x + X);
-			organizm[x][y]->set_y(y + Y);
-			organizm[x][y]->set_tura(true);
-			//organizm[x][y]->rysowanie();
-			inicjatywy.push_front(organizm[x][y]);
-			break;
-		case 2:
-			organizm[x][y] = new Wilk(m);
-			organizm[x][y]->set_x(3 * x + X);
-			organizm[x][y]->set_y(y + Y);
-			organizm[x][y]->set_tura(true);
-			//organizm[x][y]->rysowanie();
-			inicjatywy.push_front(organizm[x][y]);
-			break;
-		case 3:
-			organizm[x][y] = new Antylopa(m);
-			organizm[x][y]->set_x(3 * x + X);
-			organizm[x][y]->set_y(y + Y);
-			organizm[x][y]->set_tura(true);
-			//organizm[x][y]->rysowanie();
-			inicjatywy.push_front(organizm[x][y]);
-			break;
-		case 4:
-			organizm[x][y] = new Zolw(m);
-			organizm[x][y]->set_x(3 * x + X);
-			organizm[x][y]->set_y(y + Y);
-			organizm[x][y]->set_tura(true);
-			//organizm[x][y]->rysowanie();
-			inicjatywy.push_front(organizm[x][y]);
-			break;
-		case 5:
-			organizm[x][y] = new Lis(m);
-			organizm[x][y]->set_x(3 * x + X);
-			organizm[x][y]->set_y(y + Y);
-			//organizm[x][y]->rysowanie();
-			inicjatywy.push_back(organizm[x][y]);
-			break;
-	}
 }

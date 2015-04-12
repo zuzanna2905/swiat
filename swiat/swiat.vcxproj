@@ -85,7 +85,9 @@
     <ClCompile Include="Lis.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mlecz.cpp" />
+    <ClCompile Include="Organizm.cpp" />
     <ClCompile Include="Owca.cpp" />
+    <ClCompile Include="Roslina.cpp" />
     <ClCompile Include="Swiat.cpp" />
     <ClCompile Include="Trawa.cpp" />
     <ClCompile Include="Wilcze_jagody.cpp" />
