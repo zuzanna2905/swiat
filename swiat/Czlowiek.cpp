@@ -9,6 +9,7 @@ Czlowiek::Czlowiek(){
 	mov_x = 0;
 	mov_y = 0;
 	tura = false;
+	moc = false;
 }
 
 Czlowiek::~Czlowiek(){}
@@ -74,4 +75,10 @@ void Czlowiek::rysowanie(){
 void Czlowiek::przesun(int x, int y) {
 	mov_x = x;
 	mov_y = y;
+}
+
+void Czlowiek::super_moc(bool moc) {
+	if (moc) {
+		this->moc = !this->moc;
+	}
 }

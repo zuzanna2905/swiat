@@ -87,31 +87,42 @@ void Swiat::rysujObiekty() {
 	}
 }
 
-void Swiat::wykonajTure(int &x, int &y){
-	inicjatywy.sort(OrganizmSort());
+void Swiat::wykonajTure(int &x, int &y, bool moc){
 
-	for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end();) {
-		if ((*it) != NULL && !(*it)->get_tura()) {
-			if ((*it)->get_id() == 10 ) {
-				dynamic_cast<Czlowiek*>((*it))->przesun(x, y);
+
+	if (moc) {
+		for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end(); it++) {
+			if ((*it)->get_id() == 10) {
+				dynamic_cast<Czlowiek*>((*it))->super_moc(moc);
 			}
-			if ((*it)->akcja(organizm, inicjatywy)) {
-				inicjatywy.remove((*it++));
-			} else {
+		}
+
+	} else {
+		inicjatywy.sort(OrganizmSort());
+
+		for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end();) {
+			if ((*it) != NULL && !(*it)->get_tura()) {
 				if ((*it)->get_id() == 10) {
-					x = dynamic_cast<Czlowiek*>((*it))->get_x();
-					y = dynamic_cast<Czlowiek*>((*it))->get_y();
+					dynamic_cast<Czlowiek*>((*it))->przesun(x, y);
 				}
+				if ((*it)->akcja(organizm, inicjatywy)) {
+					inicjatywy.remove((*it++));
+				}
+				else {
+					if ((*it)->get_id() == 10) {
+						x = dynamic_cast<Czlowiek*>((*it))->get_x();
+						y = dynamic_cast<Czlowiek*>((*it))->get_y();
+					}
+					++it;
+				}
+			}
+			else {
 				++it;
 			}
-
 		}
-		else {
-			++it;
-		}
+		rysujObiekty();
+		zakonczTure();
 	}
-	rysujObiekty();
-	zakonczTure();
 }
 
 void Swiat::zakonczTure(){

@@ -10,6 +10,7 @@
 #include "Wilk.h"
 #include "Zolw.h"
 #include <random>
+#include <iostream>
 
 #define X 7
 #define Y 6
@@ -74,6 +75,12 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 			else {
 				// ginie atakujacy
 				organizm[x1_old][y1_old] = NULL; // ginie
+				int x_t = wherex();
+				int y_t = wherey();
+				gotoxy(1, 30);
+				std::cout << "gowno zmar³o ;(";
+				gotoxy(x_t, y_t);
+
 				//inicjatywy.remove(tmp);
 				usun = true;
 			}
