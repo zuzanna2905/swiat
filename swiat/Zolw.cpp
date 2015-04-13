@@ -8,7 +8,7 @@ Zolw::Zolw(int m){
 	id = m;
 }
 
-
+// zolw ma 75 % szans na zostanie na swoim miejscu
 bool Zolw::akcja(Organizm *organizm[20][20], std::list<Organizm*>& inicjatywy) {
 	int b = rand() % 4;
 	if (b > 2){

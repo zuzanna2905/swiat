@@ -9,11 +9,9 @@ Guarana::Guarana(int m)
 	id = m;
 }
 
+Guarana::~Guarana(){}
 
-Guarana::~Guarana()
-{
-}
-
+// guarana dodaje si³y kolizja zwierze
 
 void Guarana::rysowanie(){
 	int x = wherex();

@@ -1,7 +1,9 @@
 #include "Roslina.h"
 
+// rozsiewanie siê na wolne pole obok
+// jak nie ma miejsca to siê nie rozsiewa
 bool Roslina::akcja(Organizm *organizm[20][20], std::list<Organizm*>& inicjatywy){
-	int a = rand() % 20;
+	int a = rand() % 100;
 	bool nowy = false;
 	int licznik = 0;
 	int x1 = (x - 7) / 3;
@@ -43,7 +45,7 @@ bool Roslina::akcja(Organizm *organizm[20][20], std::list<Organizm*>& inicjatywy
 				nowy = true;
 			}
 			else if (licznik > 10000) {
-				// nie ma miejsca na rozmnazanie
+				// nie ma miejsca na rozsiewanie
 				nowy = true;
 			}
 		}

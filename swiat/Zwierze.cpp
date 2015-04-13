@@ -9,13 +9,16 @@
 #include "Wilcze_jagody.h"
 #include "Wilk.h"
 #include "Zolw.h"
+#include "Czlowiek.h"
 #include <random>
 #include <iostream>
-
 #define X 7
 #define Y 6
+#define NAPIS 2
+int z = NAPIS;
+#define ROZM 4;
+int e = ROZM;
 
-// usun inty i
 bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy){
 	bool usun = false;
 	Organizm *tmp = organizm[(x - 7) / 3][y - 6]; // 7 to X
@@ -48,25 +51,31 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 		y -= 1;
 	}
 	else {
-		return akcja(organizm, inicjatywy);
+		return akcja(organizm, inicjatywy); // jak nie wpad³o do ¿adnego ifa to próbujemy jeszcze raz
 	}
 	bool flaga = false; // ginie/mnozenie
-	if (organizm[x1][y1] != NULL) {
+	if (organizm[x1][y1] != NULL) { 
+		// jak nowa pozycja nie jest wolna to robimy kolizje
 		if (kolizja(organizm, x1, y1, flaga, inicjatywy))
 		{
 			// ginie atakowany
 			if (organizm[x1][y1]->get_id() == 8){
 				zwieksz_si³e();
 			}
-			inicjatywy.remove(organizm[x1][y1]);
+			//int x_t = wherex();
+			//int y_t = wherey();
+			//z++;
+			//gotoxy(74, z);
+			//std::cout  << "!Z";
+			//gotoxy(x_t, y_t); 
+			inicjatywy.remove(organizm[x1][y1]); //usuwanie z listy
 			organizm[x1_old][y1_old] = NULL;
 			organizm[x1][y1] = tmp;
 			organizm[x1][y1]->set_tura(true);
-
 		}
 		else{
 			if (flaga || id == 5) {
-				// rozmnazanie lub lis nie wchodzi na silniejszy
+				// rozmnazanie je¿eli to samo id lub lis nie wchodzi na silniejszy
 				organizm[x1_old][y1_old] = tmp;
 				organizm[x1_old][y1_old]->set_tura(true);
 				x = x_old;
@@ -75,13 +84,12 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 			else {
 				// ginie atakujacy
 				organizm[x1_old][y1_old] = NULL; // ginie
-				int x_t = wherex();
+			/*	int x_t = wherex();
 				int y_t = wherey();
-				gotoxy(1, 30);
-				std::cout << "gowno zmar³o ;(";
-				gotoxy(x_t, y_t);
-
-				//inicjatywy.remove(tmp);
+				z++;
+				gotoxy(70, z);
+				std::cout << "!A";
+				gotoxy(x_t, y_t);*/
 				usun = true;
 			}
 		}
@@ -93,11 +101,18 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 	}
 	tmp = NULL;
 	delete tmp;
-
 	return usun;
 }
 
 bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y, bool& flaga, std::list<Organizm*>& inicjatywy){
+	if (organizm[x][y]->get_id() == 10){ //czy czlowiek
+		// jak czlowiek z moca to nie wchodzimy na to pole
+		if (dynamic_cast<Czlowiek*>(organizm[x][y])->get_moc()) {
+			flaga = true;
+			return false;
+		}
+	}
+	// jak takie same id to tworzymy nowy obiekt
 	if (id == organizm[x][y]->get_id())
 	{
 		bool nowy = false;
@@ -145,6 +160,7 @@ bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y, bool& flaga, std
 		flaga = true;
 		return false;
 	}
+	// walka
 		else {
 			if (this->si³a < 5 && organizm[x][y]->get_id()==4){ // zolw odparl atak
  				flaga = true;

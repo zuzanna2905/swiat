@@ -1,8 +1,9 @@
 #include "Czlowiek.h"
 #include <random>
+#include <iostream>
 
 Czlowiek::Czlowiek(){
-	si³a = 500000;
+	si³a = 4;
 	inicjatywa = 4;
 	wiek = 0;
 	id = 10;
@@ -50,7 +51,7 @@ bool Czlowiek::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatyw
 		}
 		else{
 			// ginie atakujacy
-			organizm[x1_old][y1_old] = NULL; // ginie
+			organizm[x1_old][y1_old] = NULL; 
 			usun = true;
 		}
 	}
@@ -80,5 +81,23 @@ void Czlowiek::przesun(int x, int y) {
 void Czlowiek::super_moc(bool moc) {
 	if (moc) {
 		this->moc = !this->moc;
+	}
+	if (this->moc){
+		int x_t = wherex();
+		int y_t = wherey();
+		gotoxy(2, 30);
+		std::cout << "Czlowiek ma super moc!";
+		gotoxy(x_t, y_t);
+		int licznik =0;
+		licznik++;
+		inicjatywa = 100;
+	}
+	else {
+		int x_t = wherex();
+		int y_t = wherey();
+		gotoxy(2, 30);
+		std::cout << "                        ";
+		gotoxy(x_t, y_t);
+		inicjatywa = 4;
 	}
 }

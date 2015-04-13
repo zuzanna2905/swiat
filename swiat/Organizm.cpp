@@ -13,6 +13,7 @@
 #define X 7
 #define Y 6
 
+//tworzenie nowych organizmow
 void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list<Organizm*>& inicjatywy){
 	switch (m)
 	{
@@ -21,7 +22,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	case 2:
@@ -29,7 +29,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	case 3:
@@ -37,7 +36,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	case 4:
@@ -45,7 +43,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	case 5:
@@ -53,7 +50,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	case 6:
@@ -61,7 +57,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	case 7:
@@ -69,7 +64,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	case 8:
@@ -77,7 +71,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	case 9:
@@ -85,7 +78,6 @@ void Organizm::stworz(Organizm* organizm[20][20], int m, int x, int y, std::list
 		organizm[x][y]->set_x(3 * x + X);
 		organizm[x][y]->set_y(y + Y);
 		organizm[x][y]->set_tura(true);
-		//organizm[x][y]->rysowanie();
 		inicjatywy.push_front(organizm[x][y]);
 		break;
 	}

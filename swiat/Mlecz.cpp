@@ -10,9 +10,7 @@ Mlecz::Mlecz(int m)
 }
 
 
-Mlecz::~Mlecz()
-{
-}
+Mlecz::~Mlecz(){}
 
 
 void Mlecz::rysowanie(){
@@ -23,7 +21,7 @@ void Mlecz::rysowanie(){
 	gotoxy(x, y);
 }
 
-
+// Mlecz próbuje rozsiaæ siê 3 razy
 bool Mlecz::akcja(Organizm *organizm[20][20], std::list<Organizm*>& inicjatywy){
 	for (int i = 0; i < 3; i++){
 		Roslina::akcja(organizm, inicjatywy);

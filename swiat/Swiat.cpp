@@ -10,9 +10,11 @@ using namespace std;
 #define X 7
 #define Y 6
 
+//sortowanie ruszania
 class OrganizmSort {
 	public:
 		bool operator() (Organizm* a, Organizm* b) {
+			//poruszanie wg inicjatyw
 			if (a->get_inicjatywa() <b->get_inicjatywa() || a->get_inicjatywa() > b->get_inicjatywa()) {
 				return a->get_inicjatywa() > b->get_inicjatywa();
 			}
@@ -23,11 +25,11 @@ class OrganizmSort {
 
 };
 
+//konstruowanie œwiata
 Swiat::Swiat(){
 	settitle("Zuzanna Pusiewicz 155178");
 	textbackground(BLACK);
 	clrscr();
-
 	srand(time(NULL));
 	// ustawienie wszystkich elementów tablicy na NULL'a
 	for (int i = 0; i < N; i++) {
@@ -44,7 +46,6 @@ Swiat::Swiat(){
 	// przy ruchu zmienia siê index w tablicy ogranizm
 	polozenie();
 }
-
 
 Swiat::~Swiat(){}
 
@@ -77,6 +78,7 @@ void Swiat::rysujPlansze(){
 	}
 }
 
+// rysuje dla kazdej tury
 void Swiat::rysujObiekty() {
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
@@ -88,18 +90,17 @@ void Swiat::rysujObiekty() {
 }
 
 void Swiat::wykonajTure(int &x, int &y, bool moc){
-
-
+	// jak wcisnelismy super moc to przekazujemy to do czlowieka
 	if (moc) {
-		for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end(); it++) {
-			if ((*it)->get_id() == 10) {
-				dynamic_cast<Czlowiek*>((*it))->super_moc(moc);
+			for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end(); it++) {
+				if ((*it)->get_id() == 10) {
+					dynamic_cast<Czlowiek*>((*it))->super_moc(moc);
+				}
 			}
-		}
-
-	} else {
+	}
+	// tura bez super mocy czlowieka
+	else {
 		inicjatywy.sort(OrganizmSort());
-
 		for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end();) {
 			if ((*it) != NULL && !(*it)->get_tura()) {
 				if ((*it)->get_id() == 10) {
@@ -136,17 +137,18 @@ void Swiat::zakonczTure(){
 	}
 }
 
+// losowanie jakie to zwierzatko
 void Swiat::losuj(int x, int y){
 		int m;
 		m = rand() % 9 + 1;
 		wybierz(m, x, y);
-		//stworz();
 }
 
+// losowanie x i y w tablicy
 void Swiat::polozenie(){
 	int x = 0;
 	int y = 0;
-	for (int i = 0; i < 20; i++){
+	for (int i = 0; i < 30; i++){
 		x = rand() % 20;
 		y = rand() % 20;
 		if (organizm[x][y] == NULL){
@@ -155,8 +157,8 @@ void Swiat::polozenie(){
 	}
 }
 
+// wypelnianie swiata obiektami
 void Swiat::wybierz(int m, int x, int y){
-	//m = 4;
 	switch (m)
 	{
 	case 1:

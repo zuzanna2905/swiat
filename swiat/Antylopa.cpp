@@ -16,6 +16,7 @@ Antylopa::Antylopa(int m)
 
 Antylopa::~Antylopa(){}
 
+// specjalna akcja rusza siê co dwa pola
 bool Antylopa::akcja(Organizm * organizm[20][20], std::list<Organizm*>& inicjatywy) {
 	bool usun = false;
 	Organizm *tmp = organizm[(x - X) / 3][y - Y];
@@ -55,6 +56,9 @@ bool Antylopa::akcja(Organizm * organizm[20][20], std::list<Organizm*>& inicjaty
 	if (organizm[x1][y1] != NULL) {
 		if (kolizja(organizm, x1, y1, flaga, inicjatywy))
 		{
+			if (organizm[x1][y1]->get_id() == 8){
+				zwieksz_si³e();
+			}
 			// ginie atakowany
 			inicjatywy.remove(organizm[x1][y1]);
 			organizm[x1_old][y1_old] = NULL;
@@ -75,12 +79,10 @@ bool Antylopa::akcja(Organizm * organizm[20][20], std::list<Organizm*>& inicjaty
 				if (b == 0){
 					// ginie atakujacy
 					organizm[x1_old][y1_old] = NULL; // ginie
-					//inicjatywy.remove(tmp);
 					usun = true;
 				}
 				else{
 					//ucieka
-					//return akcja(organizm, inicjatywy, 1);
 					organizm[x1_old][y1_old] = tmp;
 					organizm[x1_old][y1_old]->set_tura(true);
 					x = x_old;

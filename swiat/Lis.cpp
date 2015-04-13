@@ -8,6 +8,8 @@ Lis::Lis(int m){
 	id = m;
 }
 
+//lis nie wchodzi na silniejszy kolizja zwierze 
+
 void Lis::rysowanie(){
 	int x = wherex();
 	int y = wherey();
