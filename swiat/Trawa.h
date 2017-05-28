@@ -8,6 +8,5 @@ public:
 	Trawa(int m);
 	~Trawa();
 	void rysowanie();
-	void akcja(Organizm *organizm[20][20]);
 };
 

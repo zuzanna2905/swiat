@@ -4,6 +4,6 @@
 
 class Roslina : public Organizm {
 public:
-	virtual void akcja(Organizm *organizm[20][20]) = 0;
-	virtual bool kolizja() = 0;
+	virtual bool akcja(Organizm *organizm[20][20], std::list<Organizm*>& inicjatywy);
+	virtual bool kolizja(Organizm *organizm[20][20], int x, int y, bool &flaga, std::list <Organizm*>&) { return true; };
 };

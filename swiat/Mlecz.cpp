@@ -10,23 +10,8 @@ Mlecz::Mlecz(int m)
 }
 
 
-Mlecz::~Mlecz()
-{
-}
+Mlecz::~Mlecz(){}
 
-void Mlecz::akcja(Organizm *organizm[20][20]) {
-	Organizm *tmp = organizm[x][y];
-	int x1 = x;
-	organizm[x][y] = NULL;
-	int a = rand() % 4;
-	if (a == 0){ x1 = x + 1; x += 3; }
-	else if (a == 1){ x1 = x - 1; x -= 3; }
-	else if (a == 2){ y += 1; }
-	else{ y -= 1; }
-	organizm[x1][y] = tmp;
-	tmp = NULL;
-
-}
 
 void Mlecz::rysowanie(){
 	int x = wherex();
@@ -34,4 +19,12 @@ void Mlecz::rysowanie(){
 	gotoxy(this->x, this->y);
 	cputs("M");
 	gotoxy(x, y);
+}
+
+// Mlecz próbuje rozsiaæ siê 3 razy
+bool Mlecz::akcja(Organizm *organizm[20][20], std::list<Organizm*>& inicjatywy){
+	for (int i = 0; i < 3; i++){
+		Roslina::akcja(organizm, inicjatywy);
+	}
+	return false;
 }
