@@ -27,5 +27,4 @@ public:
 	void wykonajTure(int &x, int &y, bool);
 	void rysujSwiat();
 	void rysujObiekty();
-
 };

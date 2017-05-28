@@ -15,11 +15,10 @@
 #define X 7
 #define Y 6
 #define NAPIS 2
+#define N 20
 int z = NAPIS;
-#define ROZM 4;
-int e = ROZM;
 
-bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy){
+bool Zwierze::akcja(Organizm* organizm[N][N], std::list<Organizm*>& inicjatywy){
 	bool usun = false;
 	Organizm *tmp = organizm[(x - 7) / 3][y - 6]; // 7 to X
 	int x1 = (x - 7) / 3;
@@ -62,12 +61,14 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 			if (organizm[x1][y1]->get_id() == 8){
 				zwieksz_si³e();
 			}
-			//int x_t = wherex();
-			//int y_t = wherey();
-			//z++;
-			//gotoxy(74, z);
-			//std::cout  << "!Z";
-			//gotoxy(x_t, y_t); 
+			int a = organizm[x1][y1]->get_id();
+			int b = this->id;
+			int x_t = wherex();
+			int y_t = wherey();
+			z++;
+			gotoxy(70, z);
+			std::cout  << b << " zabil " << a;
+			gotoxy(x_t, y_t); 
 			inicjatywy.remove(organizm[x1][y1]); //usuwanie z listy
 			organizm[x1_old][y1_old] = NULL;
 			organizm[x1][y1] = tmp;
@@ -84,12 +85,14 @@ bool Zwierze::akcja(Organizm* organizm[20][20], std::list<Organizm*>& inicjatywy
 			else {
 				// ginie atakujacy
 				organizm[x1_old][y1_old] = NULL; // ginie
-			/*	int x_t = wherex();
+				int a = organizm[x1][y1]->get_id();
+				int b = this->id;
+				int x_t = wherex();
 				int y_t = wherey();
 				z++;
 				gotoxy(70, z);
-				std::cout << "!A";
-				gotoxy(x_t, y_t);*/
+				std::cout << a << " zabilo " << b;
+				gotoxy(x_t, y_t);
 				usun = true;
 			}
 		}
@@ -108,11 +111,16 @@ bool Zwierze::kolizja(Organizm* organizm[20][20], int x, int y, bool& flaga, std
 	if (organizm[x][y]->get_id() == 10){ //czy czlowiek
 		// jak czlowiek z moca to nie wchodzimy na to pole
 		if (dynamic_cast<Czlowiek*>(organizm[x][y])->get_moc()) {
+			int x_t = wherex();
+			int y_t = wherey();
+			gotoxy(2, 33);
+			std::cout << "CZ";
+			gotoxy(x_t, y_t);
 			flaga = true;
 			return false;
 		}
 	}
-	// jak takie same id to tworzymy nowy obiekt
+	// jak takie same id to tworzymy nowy obiekt - rozmnazanie
 	if (id == organizm[x][y]->get_id())
 	{
 		bool nowy = false;

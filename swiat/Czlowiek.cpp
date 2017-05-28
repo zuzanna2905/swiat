@@ -79,25 +79,26 @@ void Czlowiek::przesun(int x, int y) {
 }
 
 void Czlowiek::super_moc(bool moc) {
-	if (moc) {
-		this->moc = !this->moc;
-	}
-	if (this->moc){
-		int x_t = wherex();
-		int y_t = wherey();
-		gotoxy(2, 30);
-		std::cout << "Czlowiek ma super moc!";
-		gotoxy(x_t, y_t);
-		int licznik =0;
-		licznik++;
-		inicjatywa = 100;
-	}
-	else {
-		int x_t = wherex();
-		int y_t = wherey();
-		gotoxy(2, 30);
-		std::cout << "                        ";
-		gotoxy(x_t, y_t);
-		inicjatywa = 4;
+		if (moc) {
+			int a = wiek;
+			this->moc = !this->moc;
+		}
+		if (this->moc){
+			int x_t = wherex();
+			int y_t = wherey();
+			gotoxy(2, 30);
+			std::cout << "Czlowiek ma super moc!";
+			gotoxy(x_t, y_t);
+			int licznik = 0;
+			licznik++;
+			inicjatywa = 100;
+		}
+		else {
+			int x_t = wherex();
+			int y_t = wherey();
+			gotoxy(2, 30);
+			std::cout << "                        ";
+			gotoxy(x_t, y_t);
+			inicjatywa = 4;
 	}
 }

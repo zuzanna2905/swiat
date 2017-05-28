@@ -90,6 +90,7 @@ void Swiat::rysujObiekty() {
 }
 
 void Swiat::wykonajTure(int &x, int &y, bool moc){
+	int licznik = 0;
 	// jak wcisnelismy super moc to przekazujemy to do czlowieka
 	if (moc) {
 			for (std::list<Organizm*>::iterator it = inicjatywy.begin(); it != inicjatywy.end(); it++) {
@@ -135,6 +136,12 @@ void Swiat::zakonczTure(){
 			}
 		}
 	}
+	/*int x_t = wherex();
+	int y_t = wherey();
+	for (int z = 0; z < 10; z ++){
+		gotoxy(70, z);
+		cputs("                ");
+	}*/
 }
 
 // losowanie jakie to zwierzatko
@@ -148,7 +155,7 @@ void Swiat::losuj(int x, int y){
 void Swiat::polozenie(){
 	int x = 0;
 	int y = 0;
-	for (int i = 0; i < 30; i++){
+	for (int i = 0; i < 50; i++){
 		x = rand() % 20;
 		y = rand() % 20;
 		if (organizm[x][y] == NULL){

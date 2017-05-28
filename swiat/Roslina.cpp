@@ -3,7 +3,7 @@
 // rozsiewanie siê na wolne pole obok
 // jak nie ma miejsca to siê nie rozsiewa
 bool Roslina::akcja(Organizm *organizm[20][20], std::list<Organizm*>& inicjatywy){
-	int a = rand() % 100;
+	int a = rand() % 50;
 	bool nowy = false;
 	int licznik = 0;
 	int x1 = (x - 7) / 3;
